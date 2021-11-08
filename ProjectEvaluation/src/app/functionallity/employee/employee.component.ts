@@ -20,11 +20,7 @@ export class EmployeeComponent implements OnInit {
   }
 
   deleteEmployee(id: string){
-    this.employeeService.deleteEmployee(id).subscribe((response) =>{
-      this.employees = this.employees.filter((employee) => employee.id !== id)
-    },
-    (err) => console.log(err)
-    );
+    this.employeeService.deleteEmployee(id).subscribe();
   }
 
   editEmployee(employee: any){

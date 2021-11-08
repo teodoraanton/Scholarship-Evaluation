@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/internal/Observable';
 import { Employee } from '../models/employee';
 import { Router } from '@angular/router';
@@ -22,11 +22,15 @@ export class EmployeeService {
   }
 
   addEmployee(employee: Employee){
-    return this.httpClient.post(this.baseUrl+"/evaluation", employee).subscribe();
+    return this.httpClient.post(this.baseUrl+"/evaluation", employee).subscribe(response => {
+      this.router.navigate(['evaluation']);
+    }, (err:HttpErrorResponse) => console.log(err));
   }
 
   editEmployee(employee: Employee){
-    return this.httpClient.put(this.baseUrl+"/evaluation?id="+employee.id, employee).subscribe();
+    return this.httpClient.put(this.baseUrl+"/evaluation?id="+employee.id, employee).subscribe(response => {
+      this.router.navigate(['evaluation']);
+    }, (err:HttpErrorResponse) => console.log(err));
   }
 
   deleteEmployee(id: string){
