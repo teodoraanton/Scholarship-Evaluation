@@ -79,7 +79,7 @@ export class EmployeeDetailsComponent implements OnInit {
     this.employeeForm = this.formBuilder.group({
       id: employee.id,
       name: [employee.name, Validators.required],
-      description: [employee.function, Validators.required],
+      function: [employee.function, Validators.required],
       phoneNumber: [employee.phoneNumber, Validators.required]
     });
   }

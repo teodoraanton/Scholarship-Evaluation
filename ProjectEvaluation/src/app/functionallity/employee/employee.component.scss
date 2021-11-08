@@ -1,3 +1,11 @@
+.buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 20px;
+    
+}
+
 .container {
     resize: both;
     display: flex;
@@ -9,7 +17,7 @@
             width: 150px;
             height: 150px;
             font-weight: bold;
-            background-color: antiquewhite;
+            background-color: rgb(219, 219, 253);
         }
     }
 }
