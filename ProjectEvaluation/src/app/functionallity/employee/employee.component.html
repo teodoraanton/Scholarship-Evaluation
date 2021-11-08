@@ -1,0 +1,35 @@
+<h1>List of employees</h1>
+
+<div class="container">
+    <div class="div" *ngFor="let e of employees">
+        <mat-card class="card-employee">
+            <mat-card-title>
+                {{e.name}}
+            </mat-card-title>
+            <br>
+            <mat-card-content>
+                {{e.function}}
+                <br>
+                {{e.phoneNumber}}
+            </mat-card-content>
+
+            <mat-card-actions>
+                <div>
+                    <button mat-icon-button (click)="editEmployee(e)">
+                        <mat-icon>edit</mat-icon>
+                      </button>
+                    <button mat-icon-button (click)="deleteEmployee(e.id)">
+                        <mat-icon>
+                            delete
+                        </mat-icon>
+                    </button>
+                </div>
+            </mat-card-actions>
+        </mat-card>
+
+    </div>
+</div>
+
+<button mat-raised-button color="primary" (click)="newEmployeePage()">
+    + Employee
+</button>

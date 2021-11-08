@@ -9,5 +9,7 @@ namespace Evaluation.Models
     {
         public Guid id { get; set; }
         public string name { get; set; }
+        public string phoneNumber { get; set; }
+        public string function { get; set; }
     }
 }

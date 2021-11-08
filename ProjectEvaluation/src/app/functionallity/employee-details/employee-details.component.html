@@ -1,0 +1,29 @@
+<h1>EMPLOYER PAGE</h1>>
+
+<form class="employee-details-form" [formGroup]="employeeForm">
+    <mat-form-field>
+        <mat-label>Name *</mat-label>
+        <input matInput name="name" formControlName="name" placeholder="Enter name"/>
+        <mat-error *ngIf="nameControl?.invalid && (nameControl?.dirty || nameControl?.touched)" class="alert">
+            *Name is required.
+          </mat-error>
+    </mat-form-field><br><br>
+
+    <mat-form-field>
+        <mat-label>Function *</mat-label>
+        <input matInput name="function" formControlName="function" placeholder="Enter the function"/>
+        <mat-error *ngIf="functionControl?.invalid && (functionControl?.dirty || functionControl?.touched)" class="alert">
+            *Function is required.
+          </mat-error>
+    </mat-form-field><br><br>
+
+    <mat-form-field>
+        <mat-label>Phone Number *</mat-label>
+        <input matInput name="phone-number" formControlName="phoneNumber" placeholder="Enter the phone number"/>
+        <mat-error *ngIf="phoneNumberControl?.invalid && (phoneNumberControl?.dirty || phoneNumberControl?.touched)" class="alert">
+            *Phone number is required.
+          </mat-error>
+    </mat-form-field><br><br>
+
+    <button mat-raised-button color="primary"  (click)="add()">ADD</button>
+</form>
