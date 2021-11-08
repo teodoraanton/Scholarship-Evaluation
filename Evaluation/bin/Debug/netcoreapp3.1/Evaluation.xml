@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Evaluation</name>
+    </assembly>
+    <members>
+        <member name="M:Evaluation.Controllers.EvaluationController.GetValues">
+            <summary>
+                Return the eval items
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Evaluation.Controllers.EvaluationController.Create(Evaluation.Models.Evalluation)">
+            <summary>
+                Add an element
+            </summary>
+            <param name="eval"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Evaluation.Controllers.EvaluationController.GetById(System.Guid)">
+            <summary>
+                Return the item with the specified id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Evaluation.Controllers.EvaluationController.Delete(System.Guid)">
+            <summary>
+                Delete the item with the specified id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Evaluation.Controllers.EvaluationController.Update(System.Guid,Evaluation.Models.Evalluation)">
+            <summary>
+                Update the item with the specified id
+            </summary>
+            <param name="id"></param>
+            <param name="eval"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
