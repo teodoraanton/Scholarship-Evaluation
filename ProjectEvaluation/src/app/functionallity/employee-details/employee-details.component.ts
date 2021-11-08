@@ -66,7 +66,7 @@ export class EmployeeDetailsComponent implements OnInit {
       id: this.employeeForm.get('id')?.value,
       name: this.employeeForm.get('name')?.value,
       function: this.employeeForm.get('function')?.value,
-      phoneNumber: this.employeeForm.get('phoneNumber')?.value.id
+      phoneNumber: this.employeeForm.get('phoneNumber')?.value
     }
     if(this.isEdit){
       this.employeeService.editEmployee(employee);

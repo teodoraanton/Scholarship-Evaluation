@@ -1,5 +1,10 @@
 <h1>List of employees</h1>
 
+<div class="buttons">
+    <button mat-raised-button color= 'primary' (click)="ascending()">ascending</button>
+    <button mat-raised-button color= 'primary' (click)="descending()">descending</button>
+</div>
+
 <div class="container">
     <div class="div" *ngFor="let e of employees">
         <mat-card class="card-employee">

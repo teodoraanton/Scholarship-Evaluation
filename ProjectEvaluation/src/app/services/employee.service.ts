@@ -34,6 +34,6 @@ export class EmployeeService {
   }
 
   deleteEmployee(id: string){
-    return this.httpClient.delete(this.baseUrl+"/evaluation/"+id);
+    return this.httpClient.delete(this.baseUrl+"/evaluation?id="+id);
   }
 }

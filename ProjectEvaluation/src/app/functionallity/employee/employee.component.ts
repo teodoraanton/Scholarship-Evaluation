@@ -10,17 +10,30 @@ import { EmployeeService } from 'src/app/services/employee.service';
 })
 export class EmployeeComponent implements OnInit {
   employees: Employee[] = [];
+  filteredEmployees: Employee[] = [];
 
   constructor(private router: Router, private employeeService: EmployeeService) { }
 
   ngOnInit(): void {
     this.employeeService.getEmployees().subscribe((employees) => {
       this.employees = employees;
+      this.filteredEmployees = employees;
     })
   }
 
+  ascending(){
+    this.filteredEmployees = this.filteredEmployees.sort((a,b) => a.name.localeCompare(b.name));
+  }
+
+  descending(){
+    this.filteredEmployees = this.filteredEmployees.sort((a,b) => b.name.localeCompare(a.name));
+  }
+
   deleteEmployee(id: string){
-    this.employeeService.deleteEmployee(id).subscribe();
+    this.employeeService.deleteEmployee(id).subscribe((response) => {
+      this.employees = this.employees.filter((employee) => employee.id !== id);
+      this.filteredEmployees = [...this.employees];
+    });
   }
 
   editEmployee(employee: any){
